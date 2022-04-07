@@ -183,7 +183,7 @@ function print()
     for(let datas of data)
     {
       HTML+="<tr>";
-      HTML += "<td>"+datas[i].name+"</td>"+"<td>"+datas[i].course+"</td>"+"<td>"+datas[i].gender+"</td>"+"<td>"+datas[i].phone+"</td>"+"<td>"+datas[i].address+"</td>"+"<td>"+datas[i].email+"</td>"+"<td>"+datas[i].fullstack+"</td>";
+      HTML += "<td>"+datas.name+"</td>"+"<td>"+datas.course+"</td>"+"<td>"+datas.gender+"</td>"+"<td>"+datas.phone+"</td>"+"<td>"+datas.address+"</td>"+"<td>"+datas.email+"</td>"+"<td>"+datas.fullstack+"</td>";
       HTML+="<td><button type="+"button"+" onClick="+"edit(this)"+">EDIT</td>";
       HTML+="<td><button type="+"button"+" onClick="+"remove(this)"+">DELETE</td>";
       HTML+="</tr>";

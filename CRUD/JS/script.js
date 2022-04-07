@@ -1,12 +1,7 @@
-
 let data=[];
 let t=0;
 print();
-
-
-
-function myFunction()
-{
+function myFunction(){
 document.getElementById("firstspan").innerHTML="";
 document.getElementById("lastspan").innerHTML="";
 document.getElementById("genderspan").innerHTML="";
@@ -16,77 +11,52 @@ document.getElementById("developerspan").innerHTML="";
 var count=1;
 var regName = /^[a-zA-Z]+$/;
 var firstname = document.getElementById("firstname").value;
-if (!regName.test(firstname)) 
-{
+if (!regName.test(firstname)) {
    count=0;
-   document.getElementById("firstspan").innerHTML="  invalid firstname";
-} 
+   document.getElementById("firstspan").innerHTML="  invalid firstname";} 
 var lastname = document.getElementById("lastname").value;
-if (!regName.test(lastname))
-{
+if (!regName.test(lastname)){
     count=0;
-    document.getElementById("lastspan").innerHTML="  invalid lastname";
-} 
+    document.getElementById("lastspan").innerHTML="  invalid lastname";} 
 var course=document.getElementById("course").value;
 var gender;
-if(!document.getElementById('male').checked && !document.getElementById('female').checked) 
-{   
+if(!document.getElementById('male').checked && !document.getElementById('female').checked) {   
 		 document.getElementById("genderspan").innerHTML="gender is not selected";
-         count=0;
-} 
-else if(document.getElementById('male').checked)
-{
-    gender="MALE";
-}
-else
-{
-    gender="FEMALE";
-}
+         count=0;} 
+else if(document.getElementById('male').checked){
+    gender="MALE";}
+else{
+    gender="FEMALE";}
 var phonenumber=document.getElementById("phonenumber").value;
 var phonelength=phonenumber.toString().length;
-if(phonelength!=10)
-{
+if(phonelength!=10){
     count=0;
-    document.getElementById("phonespan").innerHTML="phone number must be in 10 digits";
-}
+    document.getElementById("phonespan").innerHTML="phone number must be in 10 digits";}
 var email=document.getElementById("email").value;
-if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
-{
-  
+if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
   document.getElementById("emailspan").innerHTML="  enter valid email address";
-  count=0;
-}
+  count=0;}
 var frontend=document.getElementById("frontend");
 var backend=document.getElementById("backend");
 var fullstack="no";
-if (frontend.checked && backend.checked)
-{
+if (frontend.checked && backend.checked){
    frontend.value="yes";
    backend.value="yes";
-   fullstack="yes";
-}
-if (!frontend.checked && !backend.checked)
-{
+   fullstack="yes";}
+if (!frontend.checked && !backend.checked){
     frontend.value="no";
     backend.value="no";
     count=0;
-    document.getElementById("developerspan").innerHTML="  please select the developer role";
-}
-if(frontend.checked && !backend.checked)
-{
+    document.getElementById("developerspan").innerHTML="  please select the developer role";}
+if(frontend.checked && !backend.checked){
     frontend.value="yes";
-    backend.value="no";
-}
-if(!frontend.checked && backend.checked)
-{
+    backend.value="no";}
+if(!frontend.checked && backend.checked){
     frontend.value="no";
-    backend.value="yes";
-}
+    backend.value="yes";}
 var address=document.getElementById("address").value;
-if(count==1)
-{
-    let temp=
-        {
+if(count==1){
+    let temp={
         "firstname":firstname,
         "lastname":lastname,
         "name":firstname+" "+lastname,
@@ -100,13 +70,10 @@ if(count==1)
         "backend":backend
         };
     data.push(temp);
-    document.getElementById("myForm").reset();
-}
+    document.getElementById("myForm").reset();}
   print();
-  if(count==1)
-  {
-  return true;
-  }
+  if(count==1){
+  return true;}
 }
 
 

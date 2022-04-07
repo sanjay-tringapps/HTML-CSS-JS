@@ -10,7 +10,7 @@ document.getElementById("genderspan").innerHTML="";
 document.getElementById("phonespan").innerHTML="";
 document.getElementById("emailspan").innerHTML="";
 document.getElementById("developerspan").innerHTML="";
-count=1;
+var count=1;
 var regName = /^[a-zA-Z]+$/;
 var firstname = document.getElementById("firstname").value;
 if (!regName.test(firstname)) {
@@ -23,8 +23,7 @@ if (!regName.test(lastname)) {
     document.getElementById("lastspan").innerHTML="  invalid lastname";
 } 
 var course=document.getElementById("course").value;
-var male=document.getElementById("male").value;
-var female=document.getElementById("female").value;
+
 var gender;
 if(document.getElementById('male').checked == false && document.getElementById('female').checked == false) {   
 		 document.getElementById("genderspan").innerHTML="gender is not selected";
@@ -129,9 +128,13 @@ function edit(o)
      document.getElementById("backend").checked = true;
     }
     else if(data[index-1].frontend=="yes")
+    {
     document.getElementById("frontend").checked = true;
+    }
     else
+    {
     document.getElementById("backend").checked = true;
+    }
     var sub = document.getElementById("submitbtn");
     sub.style.display = "none";
     var upd = document.getElementById("updatebtn");

@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Login Page </title>
+<style> 
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: pink;
+}
+button { 
+       background-color: #4CAF50; 
+       width: 50%;
+        color:WHITE; 
+        padding: 15px; 
+        border: none; 
+        cursor: pointer; 
+        } 
+ input[type=number], input[type=password] { 
+        width: 50%; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: inline-block; 
+        border: 2px solid green; 
+        box-sizing: border-box; 
+    }
+ button:hover { 
+        opacity: 0.7; 
+    } 
+  .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px;
+        margin: 10px 5px;
+    } 
+ .container { 
+        padding: 25px; 
+        display: flex;
+        flex-direction: column;
+        margin-left: 40%; 
+        margin-right:25%;
+    } 
+</style> 
+</head>  
+<body>  
+    <center> <h1>Login Form </h1> </center> <br><br><br><br>
+    <form action="todo.html" method="post" onsubmit="return myfunction()">
+        <div class="container"> 
+            <label>Mobile Number : </label> 
+            <input type="number" placeholder="Enter Mobile Number" name="mobile" id="mobile" required>
+            <label>Password : </label> 
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+            <button type="submit">Login</button> <BR>
+        </div> 
+    </form>   
+</body>   
+</html>
+<script>
+function myfunction()
+{
+let newObject = localStorage.getItem("data");
+var obj=JSON.parse(newObject); 
+var mobile=document.getElementById("mobile").value;
+var password=document.getElementById("password").value;
+if(mobile == obj.mobile && password==obj.password)
+{}
+else
+{
+    alert("enter correct username and password");
+    return false;
+}
+}
+</script>

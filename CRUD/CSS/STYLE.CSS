@@ -1,0 +1,18 @@
+body
+{
+   text-align:center;
+   background-color:RGB(68, 184, 172);
+}
+table{
+   width:100%;
+   border: 1px solid #ddd;
+    }
+th,td{
+    text-align: left;
+}
+span
+{
+  color:red;
+}
+tr:nth-child(even) {background-color:RGB(136, 176, 75);}
+tr:nth-child(odd) {background-color:#ff6f61;}

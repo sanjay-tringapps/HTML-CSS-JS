@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>  
+<head>   
+<title>CRUD</title>  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="CSS/STYLE.CSS">
+<script src="JS/script.js"></script>
+</head>  
+<body bgcolor="pink">  
+    <h2>CRUD</h2>
+<br>  
+<form id="myForm">  
+<label> FIRSTNAME</label>         
+<input type="text" name="firstname" size="20" id="firstname" required/><span id="firstspan"></span> <br> <br>  
+<label>LASTNAME </label>     
+<input type="text" name="lastname" size="20" id="lastname" required/><span id="lastspan"></span> <br> <br>  
+<label>   
+COURSE  
+</label>   
+<select id="course">    
+<option value="BCA">BCA</option>  
+<option value="BBA">BBA</option>  
+<option value="BTech">B.Tech</option>  
+<option value="MBA">MBA</option>  
+<option value="MCA">MCA</option>  
+<option value="MTech">M.Tech</option>  
+</select>  
+  <span id="coursespan"></span>
+<br>  
+<br>  
+<label>   
+GENDER  
+</label><span id="genderspan"></span><br>  
+<input type="radio" id="male" name="gender" value="MALE"> MALE <br>  
+<input type="radio" id="female" name="gender" value="FEMALE"/> FEMALE <br>  
+<br>  
+<br>  
+<label>   
+PHONENUMBER
+</label>  
+<input type="text" name="country code"  value="+91" size="2" class="heights"/>   
+<input type="number" id="phonenumber" size="10"/> <span id="phonespan"></span><br> <br> 
+<label> 
+ADDRESS(optional)
+</label>  
+<span id="addressspan"></span>
+<br>  
+<textarea cols="50" rows="5" id="address" name="address" value="address">  
+</textarea>  
+<br> <br>  
+<label>
+Email:  
+</label>
+<input type="email" id="email" class="heights"/><span id="emailspan"></span>
+ <br>    
+<br> <br> 
+<label> 
+FrontEnd
+</label>
+<input type="checkbox" id="frontend" value="frontend">
+BackEnd
+<input type="checkbox" id="backend" value="backend"><span id="developerspan"></span>
+<br><br>
+<center>
+<input type="button" value="Submit" id="submitbtn" onclick="myFunction()"/>  
+</center>
+<center>
+<button type="button" value="" onclick="myUpdate()" id="updatebtn" hidden />UPDATE</button>
+</center> 
+<h2>Employee data</h2>
+<table id="myTable">
+</table>
+</form>  
+</body>  
+</html>  

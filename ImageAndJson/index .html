@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>READ USER DATA</title>
+<style>
+  div {
+  position: absolute;
+  top: 40%;
+  left:40%;
+  padding:20px;
+  background-color:red;
+}
+</style>
+</head>
+<body>
+<center><br>
+<h3>GET THE USER DATA LIKE IMAGE AND JSON FILE</h3>
+</center>
+<form method="get" action="next.html" target="_blank">
+<div>
+<span>IMG VIEW : </span><input type="file" accept="image/*" name="image" id="image" required />
+<br><br>
+<span>JSON FILE: </span><input type="file" id="jsonfileinput" accept=".json" required />
+<br><br>
+<input type="submit" style="margin-left:80px;">
+</div>
+</form>
+<script>
+document.querySelector("#image").addEventListener("change",function(){
+const reader=new FileReader();
+reader.addEventListener("load",()=>{
+localStorage.setItem("recent-image", reader.result);
+console.log(reader.result);
+}); 
+reader.readAsDataURL(this.files[0]);
+
+});
+document.getElementById("jsonfileinput").addEventListener("change", function() {
+  var file_to_read = document.getElementById("jsonfileinput").files[0];
+  var fileread = new FileReader();
+  fileread.onload = function(e) {
+  
+    var content = e.target.result;
+    var data = JSON.parse(content); 
+    window.localStorage.setItem("myObject", JSON.stringify(data));
+  };
+  fileread.readAsText(file_to_read);
+  
+  
+});
+</script>
+</body>
+</html>

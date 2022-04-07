@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FLEX DESIGN</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+.header {
+  padding: 3px;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+  background-color:brown;
+}
+.rows {
+  margin-bottom: 30px;
+  font-size: 25px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ColOne{
+  padding: 30px;
+  height: 250px;
+  flex: 33%;
+  flex-wrap: wrap;
+  text-align:center;
+  background-color:#FF6F61;
+  background-image:url(image/bike.jpg);
+  background-size:cover;
+  background-size:100% 100%;
+}
+.ColTwo{
+  padding: 30px;
+  height: 250px;
+  flex: 33%;
+  flex-wrap: wrap;
+  text-align:center;
+  background-color:#6B5B95;
+  background-image:url(image/car.jpg);
+  background-size:cover;
+  background-size:100% 100%;
+}
+.ColThree {
+  padding: 30px;
+  height: 250px;
+  flex: 33%;
+  flex-wrap: wrap;
+  text-align:center;
+  background-color:#88B04B;
+  background-image:url(image/train.jpg);
+  background-size:cover;
+  background-size:100% 100%;
+}
+.ColFour {
+  padding: 30px;
+  height: 250px;
+  flex: 100%;
+  flex-wrap: wrap;
+  text-align:center;
+  background-color:yellow;
+  background-image:url(image/cycle.png);
+  background-size:cover;
+  background-size:100% 100%;
+}
+.footer {
+  background-color:#FF6F61;
+  padding: 2px;
+  font-size: 30px;
+  text-align: center;
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .col1, .col2, .col3, .col4{
+    flex: 50%;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .col1, .col2, .col3, .col4{
+    flex: 100%;
+    flex-wrap: wrap;
+  }
+}
+.navBar{
+   height: 30px;
+   background-color:green;
+}
+nav{
+   height:30px;
+   float:right;
+   background-image: url(image/spriteimage.svg);
+   background-position: -307px 43px;
+   width: 154px;
+}
+</style>
+</head>
+<body>
+<div class="navBar">
+  <nav></nav>
+</div>
+<div class="header">
+  <h2>WELCOME</h2>
+</div>
+<div class="rows">
+<div class="ColOne"></div>
+<div class="ColTwo"></div>
+<div class="ColThree"></div>
+<div class="ColFour"></div>
+</div>
+<div class="footer">
+  <h2>THANK YOU</h2>
+</div>
+</body>
+</html>

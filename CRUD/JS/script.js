@@ -45,13 +45,8 @@ function myFunction(){
  
     temporary();
 
-if (!regName.test(firstname)) {
-   count=0;
-   document.getElementById("firstspan").innerHTML="  invalid firstname";} 
 
-if (!regName.test(lastname)){
-    count=0;
-    document.getElementById("lastspan").innerHTML="  invalid lastname";} 
+
 
 
 if(!document.getElementById('male').checked && !document.getElementById('female').checked) {   
@@ -62,13 +57,8 @@ else if(document.getElementById('male').checked){
 else{
     gender="FEMALE";}
 
-if(phonelength!=10){
-    count=0;
-    document.getElementById("phonespan").innerHTML="phone number must be in 10 digits";}
 
-if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
-  document.getElementById("emailspan").innerHTML="  enter valid email address";
-  count=0;}
+
 
 if (frontend.checked && backend.checked){
    frontend.value="yes";

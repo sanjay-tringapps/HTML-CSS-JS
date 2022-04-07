@@ -29,12 +29,12 @@ if (!regName.test(lastname))
 } 
 var course=document.getElementById("course").value;
 var gender;
-if(document.getElementById('male').checked == false && document.getElementById('female').checked == false) 
+if(!document.getElementById('male').checked && !document.getElementById('female').checked) 
 {   
 		 document.getElementById("genderspan").innerHTML="gender is not selected";
          count=0;
 } 
-else if(document.getElementById('male').checked == true)
+else if(document.getElementById('male').checked)
 {
     gender="MALE";
 }
@@ -104,7 +104,9 @@ if(count==1)
 }
   print();
   if(count==1)
+  {
   return true;
+  }
 }
 
 
@@ -160,7 +162,7 @@ function edit(o)
 function myUpdate()
 {
 
-    if(myFunction()==true)
+    if(myFunction())
     {
         var temp=document.getElementById("updatebtn").value;
         temp=temp-1;
@@ -178,7 +180,7 @@ function myUpdate()
 function print()
 {
     var HTML = "<table border=1 width=100%><tr><th>Name</th><th>Course</th><th>Gender</th><th>Phone</th><th>Address</th><th>Email</th><th>FullStack</th><th>EDIT</th><th>DELETE</th></tr>";
-    for(let i=0;i<data.length;i++)
+    for(i=0;i<data.length;i++)
     {
       HTML+="<tr>";
       HTML += "<td>"+data[i].name+"</td>"+"<td>"+data[i].course+"</td>"+"<td>"+data[i].gender+"</td>"+"<td>"+data[i].phone+"</td>"+"<td>"+data[i].address+"</td>"+"<td>"+data[i].email+"</td>"+"<td>"+data[i].fullstack+"</td>";

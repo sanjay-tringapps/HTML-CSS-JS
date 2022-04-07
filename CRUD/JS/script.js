@@ -180,10 +180,10 @@ function myUpdate()
 function print()
 {
     var HTML = "<table border=1 width=100%><tr><th>Name</th><th>Course</th><th>Gender</th><th>Phone</th><th>Address</th><th>Email</th><th>FullStack</th><th>EDIT</th><th>DELETE</th></tr>";
-    for(var i=0;i<data.length;i++)
+    for(let datas of data)
     {
       HTML+="<tr>";
-      HTML += "<td>"+data[i].name+"</td>"+"<td>"+data[i].course+"</td>"+"<td>"+data[i].gender+"</td>"+"<td>"+data[i].phone+"</td>"+"<td>"+data[i].address+"</td>"+"<td>"+data[i].email+"</td>"+"<td>"+data[i].fullstack+"</td>";
+      HTML += "<td>"+datas[i].name+"</td>"+"<td>"+datas[i].course+"</td>"+"<td>"+datas[i].gender+"</td>"+"<td>"+datas[i].phone+"</td>"+"<td>"+datas[i].address+"</td>"+"<td>"+datas[i].email+"</td>"+"<td>"+datas[i].fullstack+"</td>";
       HTML+="<td><button type="+"button"+" onClick="+"edit(this)"+">EDIT</td>";
       HTML+="<td><button type="+"button"+" onClick="+"remove(this)"+">DELETE</td>";
       HTML+="</tr>";

@@ -1,25 +1,59 @@
 let data=[];
 let t=0;
 print();
-function myFunction(){
-document.getElementById("firstspan").innerHTML="";
+
+var count;
+var regName;
+var firstname;
+var lastname;
+var course;
+var gender;
+var phonenumber;
+var phonelength;
+var email;
+var address;
+var frontend;
+var backend;
+var fullstack;
+
+
+
+function temporary()
+{
 document.getElementById("lastspan").innerHTML="";
 document.getElementById("genderspan").innerHTML="";
 document.getElementById("phonespan").innerHTML="";
 document.getElementById("emailspan").innerHTML="";
 document.getElementById("developerspan").innerHTML="";
-var count=1;
-var regName = /^[a-zA-Z]+$/;
-var firstname = document.getElementById("firstname").value;
+document.getElementById("firstspan").innerHTML="";
+
+    count=1;
+    regName = /^[a-zA-Z]+$/;
+    firstname = document.getElementById("firstname").value;
+    lastname = document.getElementById("lastname").value;
+    course=document.getElementById("course").value;
+    phonenumber=document.getElementById("phonenumber").value;
+    phonelength=phonenumber.toString().length;
+    email=document.getElementById("email").value;
+    address=document.getElementById("address").value;
+    frontend=document.getElementById("frontend");
+    backend=document.getElementById("backend");
+    fullstack="no";
+}
+
+function myFunction(){
+ 
+    temporary();
+
 if (!regName.test(firstname)) {
    count=0;
    document.getElementById("firstspan").innerHTML="  invalid firstname";} 
-var lastname = document.getElementById("lastname").value;
+
 if (!regName.test(lastname)){
     count=0;
     document.getElementById("lastspan").innerHTML="  invalid lastname";} 
-var course=document.getElementById("course").value;
-var gender;
+
+
 if(!document.getElementById('male').checked && !document.getElementById('female').checked) {   
 		 document.getElementById("genderspan").innerHTML="gender is not selected";
          count=0;} 
@@ -27,18 +61,15 @@ else if(document.getElementById('male').checked){
     gender="MALE";}
 else{
     gender="FEMALE";}
-var phonenumber=document.getElementById("phonenumber").value;
-var phonelength=phonenumber.toString().length;
+
 if(phonelength!=10){
     count=0;
     document.getElementById("phonespan").innerHTML="phone number must be in 10 digits";}
-var email=document.getElementById("email").value;
+
 if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
   document.getElementById("emailspan").innerHTML="  enter valid email address";
   count=0;}
-var frontend=document.getElementById("frontend");
-var backend=document.getElementById("backend");
-var fullstack="no";
+
 if (frontend.checked && backend.checked){
    frontend.value="yes";
    backend.value="yes";
@@ -54,7 +85,7 @@ if(frontend.checked && !backend.checked){
 if(!frontend.checked && backend.checked){
     frontend.value="no";
     backend.value="yes";}
-var address=document.getElementById("address").value;
+
 if(count==1){
     let temp={
         "firstname":firstname,

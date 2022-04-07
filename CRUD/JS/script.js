@@ -116,9 +116,13 @@ function edit(o)
     document.getElementById("lastname").value=data[index-1].lastname;
     document.getElementById("course").value=data[index-1].course;
     if(data[index-1].gender=="MALE")
+    {
     document.getElementById("male").checked = true;
+    }
     else
+    {
     document.getElementById("female").checked = true;
+    }
     document.getElementById("phonenumber").value=data[index-1].phone;
     document.getElementById("address").value=data[index-1].address;
     document.getElementById("email").value=data[index-1].email;
@@ -160,7 +164,7 @@ function myUpdate()
 function print()
 {
     var HTML = "<table border=1 width=100%><tr><th>Name</th><th>Course</th><th>Gender</th><th>Phone</th><th>Address</th><th>Email</th><th>FullStack</th><th>EDIT</th><th>DELETE</th></tr>";
-    for(i=0;i<data.length;i++)
+    for(var i=0;i<data.length;i++)
     {
       HTML+="<tr>";
       HTML += "<td>"+data[i].name+"</td>"+"<td>"+data[i].course+"</td>"+"<td>"+data[i].gender+"</td>"+"<td>"+data[i].phone+"</td>"+"<td>"+data[i].address+"</td>"+"<td>"+data[i].email+"</td>"+"<td>"+data[i].fullstack+"</td>";

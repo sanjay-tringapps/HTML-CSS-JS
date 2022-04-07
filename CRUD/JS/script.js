@@ -2,6 +2,9 @@
 let data=[];
 let t=0;
 print();
+
+
+
 function myFunction()
 {
 document.getElementById("firstspan").innerHTML="";
@@ -13,19 +16,21 @@ document.getElementById("developerspan").innerHTML="";
 var count=1;
 var regName = /^[a-zA-Z]+$/;
 var firstname = document.getElementById("firstname").value;
-if (!regName.test(firstname)) {
+if (!regName.test(firstname)) 
+{
    count=0;
    document.getElementById("firstspan").innerHTML="  invalid firstname";
 } 
 var lastname = document.getElementById("lastname").value;
-if (!regName.test(lastname)) {
+if (!regName.test(lastname))
+{
     count=0;
     document.getElementById("lastspan").innerHTML="  invalid lastname";
 } 
 var course=document.getElementById("course").value;
-
 var gender;
-if(document.getElementById('male').checked == false && document.getElementById('female').checked == false) {   
+if(document.getElementById('male').checked == false && document.getElementById('female').checked == false) 
+{   
 		 document.getElementById("genderspan").innerHTML="gender is not selected";
          count=0;
 } 
@@ -54,25 +59,25 @@ if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
 var frontend=document.getElementById("frontend");
 var backend=document.getElementById("backend");
 var fullstack="no";
-if (frontend.checked == true && backend.checked==true)
+if (frontend.checked && backend.checked)
 {
    frontend.value="yes";
    backend.value="yes";
    fullstack="yes";
 }
-if (frontend.checked == false && backend.checked==false)
+if (!frontend.checked && !backend.checked)
 {
     frontend.value="no";
     backend.value="no";
     count=0;
     document.getElementById("developerspan").innerHTML="  please select the developer role";
 }
-if(frontend.checked == true && backend.checked==false)
+if(frontend.checked && !backend.checked)
 {
     frontend.value="yes";
     backend.value="no";
 }
-if(frontend.checked == false && backend.checked==true)
+if(!frontend.checked && backend.checked)
 {
     frontend.value="no";
     backend.value="yes";
@@ -97,12 +102,13 @@ if(count==1)
     data.push(temp);
     document.getElementById("myForm").reset();
 }
-print();
+  print();
   if(count==1)
-  {
-   return true;
-  }
+  return true;
 }
+
+
+
 function remove(o)
 {
 	var dele = o.parentNode.parentNode.rowIndex;
@@ -110,6 +116,8 @@ function remove(o)
     data.splice(dele,1);
 	print();
 }
+
+
 function edit(o)
 {
     document.getElementById("myForm").reset();
@@ -148,6 +156,7 @@ function edit(o)
     document.getElementById("updatebtn").value=index;
 }
 
+
 function myUpdate()
 {
 
@@ -163,10 +172,13 @@ function myUpdate()
     print();
 }
 
+
+
+
 function print()
 {
     var HTML = "<table border=1 width=100%><tr><th>Name</th><th>Course</th><th>Gender</th><th>Phone</th><th>Address</th><th>Email</th><th>FullStack</th><th>EDIT</th><th>DELETE</th></tr>";
-    for(i=0;i<data.length;i++)
+    for(let i=0;i<data.length;i++)
     {
       HTML+="<tr>";
       HTML += "<td>"+data[i].name+"</td>"+"<td>"+data[i].course+"</td>"+"<td>"+data[i].gender+"</td>"+"<td>"+data[i].phone+"</td>"+"<td>"+data[i].address+"</td>"+"<td>"+data[i].email+"</td>"+"<td>"+data[i].fullstack+"</td>";
